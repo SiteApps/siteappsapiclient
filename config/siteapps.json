@@ -1,8 +1,8 @@
 {
     "partner": {
-        "publicKey": "885e28ed02fc716d683f2b3bf8ba94e5",
-        "privateKey": "e73c861deadb404958f322841b4348f4",
-        "planId": "379"
+        "publicKey": "f927a17b31dcdbd4efe044d5aad102ae",
+        "privateKey": "980715d2bd742341ba7ec52760e84e9a",
+        "planId": "22759"
     },
     "engine":"file",
     "file": {
