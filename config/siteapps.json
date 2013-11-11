@@ -1,0 +1,12 @@
+{
+    "partner": {
+        "publicKey": "885e28ed02fc716d683f2b3bf8ba94e5",
+        "privateKey": "e73c861deadb404958f322841b4348f4",
+        "planId": "379"
+    },
+    "engine":"file",
+    "file": {
+        "path":"/Users/marcelioleal/workspace/siteappsAPIClient/sites/",
+        "js":"/Users/marcelioleal/workspace/siteappsAPIClient/siteappsjs/"
+    }
+}
