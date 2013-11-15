@@ -64,19 +64,20 @@ class SiteAppsPartnerClient
         return array_merge($site, $siteParams);
     }
 
-    public function getLoginToken($siteId, $email, $privateKey, $publicKey, $userKey)
+
+    public function getLoginToken($userSite)
     {
-        try {
-            $params = json_encode(array('site_id' => $siteId, 'user_email' => $email, 'user_agent' => $_SERVER['HTTP_USER_AGENT'], 'ip' => $_SERVER['REMOTE_ADDR']));
-            $hash = hash_hmac('sha256', $params, $privateKey . $userKey);
-            $result = $this->getResponse('Auth/createLoginToken', $hash, $params, $publicKey);
-            if ( !array_key_exists('token', $result) || !array_key_exists('url_to_login', $result)) {
-                throw new Exception('Can\'t login. Wrong data.');
-            }
-            return $result;
-        } catch (Exception $e) {
-            //$this->messages->addCustomMessage($e->getMessage(), true);
-            //exception ?
-        }
+        $browser = (@$_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'monzilla';
+        $ip = (@$_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'10.10.10.10';
+        
+        $params = array(
+            'site_id' => $userSite['site_id'],
+            'user_email' => $userSite['email'],
+            'user_agent' => $browser,
+            'ip' => $ip
+        );
+        $loginData = $this->http->getResponse(EndPoint::AUTH_LOGIN_TOKEN, $params, $this->config['partner']['privateKey'] . $userSite['user_key'], $this->config['partner']['publicKey']);
+        $this->validator->validateDataReturned(array('token', 'url_to_login'), $loginData);
+        return $loginData;
     }
 }

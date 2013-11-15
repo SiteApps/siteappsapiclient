@@ -1,2 +1,5 @@
 composer.lock
 vendor/
+.DS_Store
+src/.DS_Store
+src/SiteApps/.DS_Store

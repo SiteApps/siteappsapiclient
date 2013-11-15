@@ -67,15 +67,17 @@ END;
         \SiteApps\Base\SaFile::saveFileContent($filename, $data);
     }
     
-    public function getDashboard($partnerSiteId)
+    public function getDashboard($loginCallbackUrl)
     {
-        $userSite = null;
-        try {
-            $userSite = $this->getSiteDetail($partnerSiteId);
-        } catch (Exception $e) {
-            
-        }
-        
         include_once __DIR__ . "/../view/dashboard.php";
+    }
+    
+    public function loginRedirect($loginData)
+    {
+        if ($loginData['token']) {
+        header("Location: " . $loginData['url_to_login'] . $loginData['token']);
+    } else {
+        header('location: https://siteapps.com/Dashboard?utm_source=partner&utm_medium=api-client&utm_campaign=settings_info&utm_content=');
+    }
     }
 }
