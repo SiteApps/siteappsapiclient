@@ -6,7 +6,7 @@
     },
     "engine":"file",
     "file": {
-        "path":"/var/siteapps/sites/",
+        "path":"/Users/marcelioleal/workspace/siteAppsAPIClient/sites/",
         "js":"/var/www/siteappsjs/"
     }
 }

@@ -4,7 +4,7 @@ include_once __DIR__ . "/../vendor/autoload.php";
 $configPath = __DIR__ . "/../config/siteapps.json";
 
 //Your client or shop id
-$partnerSiteId = 1224;
+$partnerSiteId = 1227;
 
 try {
     $siteApps = new \SiteApps\API\SiteApps($configPath);

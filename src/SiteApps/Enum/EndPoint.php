@@ -11,4 +11,5 @@ class EndPoint
     const SEGMENTS_GET = 'Segment/getSegments';
     const FLAG_ADD = 'Site/addFlags';
     const AUTH_LOGIN_TOKEN = 'Auth/createLoginToken';
+    const PARTNER_AUTH_LOGIN_TOKEN = 'PartnerSite/createLoginToken';
 }

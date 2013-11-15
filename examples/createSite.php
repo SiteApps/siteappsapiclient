@@ -4,11 +4,11 @@ include_once __DIR__ . "/../vendor/autoload.php";
 $configPath = __DIR__ . "/../config/siteapps.json";
  
 $name = "API test for Partners";
-$email = "yourcliente@bpg.com.br";
-$url = "http://yourclient.bpg.com.br";
+$email = "yourclientnew@bpg.com.br";
+$url = "http://yourclientnew.bpg.com.br";
 
 //Your client or shop id
-$partnerSiteId = 1224;
+$partnerSiteId = 1227;
 
 try {
     $siteAppsAPI = new \SiteApps\API\SiteAppsPartnerClient($configPath);

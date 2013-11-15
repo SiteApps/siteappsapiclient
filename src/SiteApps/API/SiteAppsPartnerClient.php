@@ -71,12 +71,13 @@ class SiteAppsPartnerClient
         $ip = (@$_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'10.10.10.10';
         
         $params = array(
+            'user_id' => $userSite['user_id'],
             'site_id' => $userSite['site_id'],
             'user_email' => $userSite['email'],
             'user_agent' => $browser,
             'ip' => $ip
         );
-        $loginData = $this->http->getResponse(EndPoint::AUTH_LOGIN_TOKEN, $params, $this->config['partner']['privateKey'] . $userSite['user_key'], $this->config['partner']['publicKey']);
+        $loginData = $this->http->getResponse(EndPoint::PARTNER_AUTH_LOGIN_TOKEN, $params, $this->config['partner']['privateKey'] . $userSite['user_key'], $this->config['partner']['publicKey']);
         $this->validator->validateDataReturned(array('token', 'url_to_login'), $loginData);
         return $loginData;
     }
