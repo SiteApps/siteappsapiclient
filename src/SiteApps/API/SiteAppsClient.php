@@ -117,8 +117,11 @@ class SiteAppsClient
         }
     }
 
-    public function getLoginToken($siteId, $email, $privateKey, $publicKey, $userKey)
+    public function getLoginToken($userSite)
     {
+        $siteId = $userSite['site_id'];
+        $email = $userSite['email'];
+        $userKey = $userSite['user_key'];
         try {
             $params = json_encode(array('site_id' => $siteId, 'user_email' => $email, 'user_agent' => $_SERVER['HTTP_USER_AGENT'], 'ip' => $_SERVER['REMOTE_ADDR']));
             $hash = hash_hmac('sha256', $params, $privateKey . $userKey);
