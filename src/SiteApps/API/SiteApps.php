@@ -74,10 +74,22 @@ END;
     
     public function loginRedirect($loginData)
     {
+        $postData = array();
+        $url = 'https://siteapps.com/Dashboard?utm_source=partner&utm_medium=api-client&utm_campaign=settings_info&utm_content=';
         if ($loginData['token']) {
-        header("Location: " . $loginData['url_to_login'] . $loginData['token']);
-    } else {
-        header('location: https://siteapps.com/Dashboard?utm_source=partner&utm_medium=api-client&utm_campaign=settings_info&utm_content=');
-    }
+            $url = $loginData['url_to_login'];
+            $postData['token'] = $loginData['token'];
+        }
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url );
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_exec($ch);
+        curl_close($ch);
     }
 }

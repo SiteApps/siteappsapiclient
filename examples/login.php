@@ -13,9 +13,6 @@ try {
     $siteAppsAPI = new \SiteApps\API\SiteAppsPartnerClient($configPath);
     $loginData = $siteAppsAPI->getLoginToken($userSite);
 
-    print_r($loginData);
-    die;
-    
     //redirect to siteapps (is a new page link)
     $siteApps->loginRedirect($loginData);
 } catch (Exception $e) {
