@@ -9,7 +9,7 @@
     },
     "engine":"file",
     "file": {
-        "path":"/Users/marcelioleal/workspace/siteAppsAPIClient/sites/",
-        "js":"/Users/marcelioleal/workspace/siteAppsAPIClient/siteappsjs/"
+        "path":"/path/to/siteAppsAPIClient/sites/",
+        "js":"/path/to/siteAppsAPIClient/siteappsjs/"
     }
 }

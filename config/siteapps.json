@@ -3,13 +3,13 @@
         "url": "https://api.siteapps.com/"
     },
     "partner": {
-        "publicKey": "f927a17b31dcdbd4efe044d5aad102ae",
-        "privateKey": "980715d2bd742341ba7ec52760e84e9a",
-        "planId": "22759"
+        "publicKey": "",
+        "privateKey": "",
+        "planId": ""
     },
     "engine":"file",
     "file": {
-        "path":"/Users/marcelioleal/workspace/siteAppsAPIClient/sites/",
-        "js":"/Users/marcelioleal/workspace/siteAppsAPIClient/siteappsjs/"
+        "path":"/path/to/siteAppsAPIClient/sites/",
+        "js":"/path/to/siteAppsAPIClient/siteappsjs/"
     }
 }
