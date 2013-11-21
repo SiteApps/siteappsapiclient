@@ -161,29 +161,29 @@
             <div class="row" style="position: relative; z-index: 100">
 
                                 <div class="span4 partner_element_appitem">
-                        <a href="http://siteapps.com/app/nota_sticky_note-521">
+                        <a href="<?php print $loginCallbackUrl?>?url=app/nota_sticky_note-521">
                             <img src="http://siteapps.com/apps/img/521/logo" />
                         </a>
                         <div class="info">
-                            <a href="http://siteapps.com/app/nota_sticky_note-521" class="title">Nota (Sticky Note)</a>
+                            <a href="<?php print $loginCallbackUrl?>?url=app/nota_sticky_note-521" class="title">Nota (Sticky Note)</a>
                             <div class="txt">Mostre no seu site um 'sticky note' com uma mensagem personalizada.</div>
                         </div>
                     </div>
                                 <div class="span4 partner_element_appitem">
-                        <a href="http://siteapps.com/app/facebook_comments-283">
+                        <a href="<?php print $loginCallbackUrl?>?url=app/facebook_comments-283">
                             <img src="http://siteapps.com/apps/img/283/logo" />
                         </a>
                         <div class="info">
-                            <a href="http://siteapps.com/app/facebook_comments-283" class="title">Facebook Comments</a>
+                            <a href="<?php print $loginCallbackUrl?>?url=app/facebook_comments-283" class="title">Facebook Comments</a>
                             <div class="txt">Inclua coment&aacute;rios do Facebook em um &uacute;nico clique no seu website.</div>
                         </div>
                     </div>
                                 <div class="span4 partner_element_appitem">
-                        <a href="http://siteapps.com/app/widget_de_redes_sociais-526">
+                        <a href="<?php print $loginCallbackUrl?>?url=app/widget_de_redes_sociais-526">
                             <img src="http://siteapps.com/apps/img/526/logo" />
                         </a>
                         <div class="info">
-                            <a href="http://siteapps.com/app/widget_de_redes_sociais-526" class="title">Widget de Redes Sociais</a>
+                            <a href="<?php print $loginCallbackUrl?>?url=app/widget_de_redes_sociais-526" class="title">Widget de Redes Sociais</a>
                             <div class="txt">Aumente a exposi&ccedil;&atilde;o da sua presen&ccedil;a nas redes sociais.</div>
                         </div>
                     </div>
@@ -212,8 +212,6 @@
                     <p>Voc&ecirc; pode integrar a sua conta do Google Analytics ao SiteApps e atrav&eacute;s de m&eacute;todos de an&aacute;lise big-data, o nosso sistema traz a tona as pricipais <strong>oportunidades de otimiza&ccedil;&atilde;o</strong> do website e recomendar aplicativos para melhorar a experi&ecirc;ncia do usu&aacute;rio e consequentemente a taxa de convers&atilde;o.</p>
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
