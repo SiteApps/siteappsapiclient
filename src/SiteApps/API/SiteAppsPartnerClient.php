@@ -20,7 +20,7 @@ class SiteAppsPartnerClient
     private function setHTTP($saHttp)
     {
         if (!$saHttp) {
-            $saHttp = new \SiteApps\Base\SaHttp();
+            $saHttp = new \SiteApps\Base\SaHttp($this->config['api']['url']);
         }
         $this->http = $saHttp;
     }
@@ -67,8 +67,8 @@ class SiteAppsPartnerClient
 
     public function getLoginToken($userSite)
     {
-        $browser = (@$_SERVER['HTTP_USER_AGENT'])?$_SERVER['HTTP_USER_AGENT']:'monzilla';
-        $ip = (@$_SERVER['REMOTE_ADDR'])?$_SERVER['REMOTE_ADDR']:'10.10.10.10';
+        $browser = $_SERVER['HTTP_USER_AGENT'];
+        $ip = $_SERVER['REMOTE_ADDR'];
         
         $params = array(
             'user_id' => $userSite['user_id'],

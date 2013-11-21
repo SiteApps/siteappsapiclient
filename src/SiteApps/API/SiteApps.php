@@ -56,8 +56,12 @@ END;
     public function getSiteDetail($partnerSiteId)
     {
         $filename = $this->config['file']['path'] . $partnerSiteId;
-        $data = \SiteApps\Base\SaFile::getFile($filename);
-        return json_decode($data, 1);
+        try {
+            $data = \SiteApps\Base\SaFile::getFile($filename);
+            return json_decode($data, 1);
+        } catch (\RuntimeException $e) {
+            return null;
+        }
     }
     
     public function save($partnerSiteId, $userSiteData)
@@ -72,24 +76,16 @@ END;
         include_once __DIR__ . "/../view/dashboard.php";
     }
     
-    public function loginRedirect($loginData)
+    public function loginRedirect($loginData, $partialUrl = null)
     {
-        $postData = array();
-        $url = 'https://siteapps.com/Dashboard?utm_source=partner&utm_medium=api-client&utm_campaign=settings_info&utm_content=';
+        $url = 'https://siteapps.com';
         if ($loginData['token']) {
-            $url = $loginData['url_to_login'];
-            $postData['token'] = $loginData['token'];
+            $url = $loginData['url_to_login'] . '/' . $loginData['token'];
         }
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url );
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_exec($ch);
-        curl_close($ch);
+        if ($partialUrl !== null) {
+            $url .= '?partialUrl=' .$partialUrl;
+        }
+        
+        header('location: ' . $url);
     }
 }

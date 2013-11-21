@@ -6,14 +6,16 @@ class SaHttp
 {
 
     private $encription;
+    private $url;
 
-    public function __construct($encriptionClass = null)
+    public function __construct($url, $encriptionClass = null)
     {
         if ($encriptionClass == null) {
             $encriptionClass = new \SiteApps\Base\SaEncription();
         }
         $this->encription = $encriptionClass;
         $this->checkCurlIsLoaded();
+        $this->url = $url;
     }
 
     public function checkCurlIsLoaded()
@@ -44,7 +46,8 @@ class SaHttp
             "json-data"     => $params
         );
 
-        $url = 'https://api.siteapps.com/' . $endpoint;
+        $url = $this->url . $endpoint;
+
         $result = $this->postData($url, $postData);
         return json_decode($result, 1);
     }

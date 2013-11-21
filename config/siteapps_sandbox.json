@@ -1,11 +1,11 @@
 {
     "api": {
-        "url": "https://api.siteapps.com/"
+        "url": "http://cpanel:SandBox1104@apibeta.siteapps.com/"
     },
     "partner": {
-        "publicKey": "f927a17b31dcdbd4efe044d5aad102ae",
-        "privateKey": "980715d2bd742341ba7ec52760e84e9a",
-        "planId": "22759"
+        "publicKey": "987654321",
+        "privateKey": "987654321",
+        "planId": "112"
     },
     "engine":"file",
     "file": {
